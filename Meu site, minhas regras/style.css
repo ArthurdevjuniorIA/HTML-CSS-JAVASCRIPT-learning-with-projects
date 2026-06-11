@@ -1,0 +1,134 @@
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background-color: #121212; 
+    color: white; 
+    font-family: 'Open Sans', sans-serif; 
+}
+
+
+.hero {
+    height: 100vh; 
+    width: 100%;
+    background: url('img.img/wallpaperronaldo.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    
+
+    background: linear-gradient(
+        to bottom, 
+        rgba(18, 18, 18, 0.5) 0%, 
+        rgba(18, 18, 18, 0.2) 50%, 
+        #121212 100%
+    );
+    z-index: 1;
+}
+
+.hero-content { 
+    position: relative; 
+    z-index: 2; 
+    text-align: center; 
+}
+
+.nome-assinatura {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: white;
+}
+
+.slogan-ouro {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-top: -15px;
+}
+
+
+.titulo-sessao {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    color: #FFD700;
+    margin-bottom: 30px;
+}
+
+.quem-sou { padding: 100px 10%; }
+
+.container-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.texto-apresentacao p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.foto-destaque img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+
+.porque-cr7 { padding: 0 10% 100px; }
+
+.grid-motivos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card-motivo {
+    position: relative;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-motivo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-motivo:hover img { transform: scale(1.1); }
+
+.card-motivo h3 {
+    position: absolute;
+    top: 20px; width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-shadow: 2px 2px 10px black;
+}
+
+@media (max-width: 768px) {
+    .container-flex { flex-direction: column; text-align: center; }
+    .grid-motivos { grid-template-columns: 1fr; }
+}

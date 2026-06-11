@@ -1,0 +1,28 @@
+.cris {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    font-weight: 200px;
+    }
+.Photo {
+    border-radius: 10%;
+    width: 400px;
+}
+.all {
+    text-align: center;
+}
+.SIII {
+    font-family: "Montserrat", sans-serif;
+}
+.seguir {
+    background-color: #1DA1F2; /* Cor de fundo (ex: azul padrão) */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+   
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    border-radius: 20px; /* Deixa as bordas arredondadas */
+   
+   
+}
+

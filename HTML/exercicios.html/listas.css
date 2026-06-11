@@ -1,0 +1,9 @@
+.Tabela {
+    border-radius: 20px;
+    width: 400px;
+}
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 5px;
+}
