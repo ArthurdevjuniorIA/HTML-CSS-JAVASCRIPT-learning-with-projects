@@ -1,16 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio - Arthur Kauã</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="capa">
-        <h2 class="subtitulo"> Olá, Eu sou</h2>
-        <h1 class="titulo"> print("Arthur Kauã")</h1>
+        <header class="navbar">
+            <div class="logo">
+                <img src="img.videos/logo.png" alt="Logo AK"> 
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mim">Sobre mim</a></li>
+                    <li><a href="#inspiracao">Inspiração</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="ambos">
+            <h2 class="subtitulo"> Olá, Eu sou</h2>
+            <h1 class="titulo"> print("Arthur Kauã")</h1>
+        </section>
+    </div>
+
+    <section id="sobre-mim" class="sobre-mim-section">
+    <div class="section-title-container">
+        <h2 class="section-main-title">Sobre mim</h2>
+        <p class="section-subtitle">Clique nos vídeos para assistir...</p>
+    </div>
+
+    <div class="stories-grid">
+        
+        <div class="story-card">
+            <div class="story-header">
+                <div class="story-user-info">
+                    <img src="img.videos/foto.jpeg" alt="Arthur" class="story-avatar">
+                    <span class="story-username">Sobre mim</span>
+                    <span class="story-time">8w</span>
+                </div>
+                <div class="story-actions">
+                    <span class="material-icons volume-btn">volume_off</span>
+                    <span class="material-icons">more_vert</span>
+                </div>
+            </div>
+
+            <video src="img.videos/codando.mp4" loop playsinline muted></video>
+            <div class="story-footer">
+                <div class="story-input-capsule">
+                    <span>Responda tutudev.js...</span>
+                </div>
+                <span class="material-icons heart-icon">favorite_border</span>
+            </div>
+        </div>
+
+        <div class="story-card">
+            <div class="story-header">
+                <div class="story-user-info">
+                    <img src="img.videos/foto.jpeg" alt="Arthur" class="story-avatar">
+                    <span class="story-username">Sobre mim</span>
+                    <span class="story-time">48w</span>
+                </div>
+                <div class="story-actions">
+                    <span class="material-icons volume-btn">volume_off</span>
+                    <span class="material-icons">more_vert</span>
+                </div>
+            </div>
+
+            <video src="img.videos/cavaquinho.mp4" loop playsinline muted></video>
+
+            <div class="story-footer">
+                <div class="story-input-capsule">
+                    <span>Responda tutudev.js...</span>
+                </div>
+                <span class="material-icons heart-icon">favorite_border</span>
+            </div>
+        </div>
+
+        <div class="story-card">
+            <div class="story-header">
+                <div class="story-user-info">
+                    <img src="img.videos/foto.jpeg" alt="Arthur" class="story-avatar">
+                    <span class="story-username">Sobre mim</span>
+                    <span class="story-time">52w</span>
+                </div>
+                <div class="story-actions">
+                    <span class="material-icons volume-btn">volume_off</span>
+                    <span class="material-icons">more_vert</span>
+                </div>
+            </div>
+
+            <video src="img.videos/jogando.mp4" loop playsinline muted></video>
+
+            <div class="story-footer">
+                <div class="story-input-capsule">
+                    <span>Responda tutudev.js...</span>
+                </div>
+                <span class="material-icons heart-icon">favorite_border</span>
+            </div>
+        </div>
+        <script src="script.js"></script>
 
     </div>
+</section>
 </body>
 </html>

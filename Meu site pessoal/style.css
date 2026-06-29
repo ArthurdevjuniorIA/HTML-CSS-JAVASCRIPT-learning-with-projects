@@ -1,17 +1,288 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+/* FORÇAR A FONTE DO GOOGLE NOS ÍCONES (Impede que virem texto) */
+.material-icons {
+    font-family: 'Material Icons' !important;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+
+/* NAVBAR & CAPA */
 .capa {
-    background-image: url(img.img/capa.jpg);
+    background-image: url(img.videos/capa.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-      background-attachment: fixed;
-  height: 100vh; 
-  margin: 0;
+    background-attachment: fixed;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
 }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 2rem 10%;
+    width: 100%;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 4rem;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.navbar a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #FFCC00;
+}
+
+.ambos {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+.subtitulo {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
 .titulo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #FFCC00;
+}
+
+/* STORIES SECTOR */
+.sobre-mim-section {
+    background-color: #0d0d0d;
+    padding: 6rem 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.section-title-container {
+    text-align: left;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 3rem;
+}
+
+.section-main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #FFCC00;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+.stories-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.story-card {
+    position: relative;
+    width: 300px;
+    height: 533px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    user-select: none;
+}
+
+.story-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, rgba(0,0,0,0.6) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.story-slides-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.story-slide {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.story-slide.active {
+    opacity: 1;
+}
+
+/* ESTILIZAÇÃO DO VÍDEO DO STORIES */
+.story-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta o vídeo perfeitamente nas bordas sem achatar */
+}
+
+/* BARRAS DE NAVEGAÇÃO */
+.story-progress-container {
+    position: absolute;
+    top: 12px; left: 12px; right: 12px;
+    display: flex;
+    gap: 4px;
+    z-index: 5;
+}
+
+.progress-bar-bg {
+    flex: 1;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #FFFFFF;
+}
+
+/* HEADERS & FOOTERS */
+.story-header {
+    position: absolute;
+    top: 25px; left: 12px; right: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
+}
+
+.story-user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.story-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.story-username {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.story-time {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+.story-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.story-actions .material-icons {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.story-footer {
+    position: absolute;
+    bottom: 16px; left: 12px; right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 4;
+    gap: 12px;
+}
+
+.story-input-capsule {
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    padding: 10px 16px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.story-input-capsule span {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+}
+
+.heart-icon {
+    font-size: 24px;
+    transition: transform 0.2s ease;
+}
+
+.heart-icon:hover {
+    transform: scale(1.1);
+    color: #ff3b30;
+}
+.story-card video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     
+    /* 🔴 ALTERE PARA CONTAIN: */
+    object-fit: contain; /* Mostra o vídeo 100% inteiro, sem zoom */
+    
+    background-color: #000000;
+    z-index: 1;
 }
