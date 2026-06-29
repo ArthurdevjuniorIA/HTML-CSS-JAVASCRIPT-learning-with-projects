@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.capa {
+    background-image: url(img.img/capa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+      background-attachment: fixed;
+  height: 100vh; 
+  margin: 0;
+}
+.titulo {
+    
+}
