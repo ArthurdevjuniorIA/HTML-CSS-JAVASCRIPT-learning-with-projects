@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Arthur Kauã</title>
-    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="capa">
-        <header class="navbar">
+        <header class="barra-nav">
             <div class="logo">
-                <img src="img.videos/logo.png" alt="Logo AK"> 
+                <img src="img.videos/logo.png" alt="Logo AK">
             </div>
             <nav>
                 <ul>
@@ -26,94 +23,252 @@
                     <li><a href="#inspiracao">Inspiração</a></li>
                     <li><a href="#galeria">Galeria</a></li>
                     <li><a href="#contato">Contato</a></li>
+                    <li><a href="#Tabela">Tabela</a></li>
                 </ul>
             </nav>
         </header>
-
-        <section class="ambos">
-            <h2 class="subtitulo"> Olá, Eu sou</h2>
-            <h1 class="titulo"> print("Arthur Kauã")</h1>
+        <section class="texto-capa">
+            <h2 class="subtitulo">Olá, Eu sou</h2>
+            <h1 class="titulo">print("Arthur Kauã")</h1>
         </section>
     </div>
 
-    <section id="sobre-mim" class="sobre-mim-section">
-    <div class="section-title-container">
-        <h2 class="section-main-title">Sobre mim</h2>
-        <p class="section-subtitle">Clique nos vídeos para assistir...</p>
-    </div>
-
-    <div class="stories-grid">
-        
-        <div class="story-card">
-            <div class="story-header">
-                <div class="story-user-info">
-                    <img src="img.videos/foto.jpeg" alt="Arthur" class="story-avatar">
-                    <span class="story-username">Sobre mim</span>
-                    <span class="story-time">8w</span>
-                </div>
-                <div class="story-actions">
-                    <span class="material-icons volume-btn">volume_off</span>
-                    <span class="material-icons">more_vert</span>
-                </div>
+    <section id="sobre-mim" class="secao-sobre">
+        <div class="container-secao">
+            <div class="cabecalho-secao">
+                <h2 class="titulo-secao">Sobre mim</h2>
+                <p class="subtitulo-secao">Clique nos vídeos para assistir...</p>
             </div>
+            <div class="grade-stories">
 
-            <video src="img.videos/codando.mp4" loop playsinline muted></video>
-            <div class="story-footer">
-                <div class="story-input-capsule">
-                    <span>Responda tutudev.js...</span>
+                <div class="card-story">
+                    <div class="topo-story">
+                        <div class="info-usuario">
+                            <img src="img.videos/foto.jpeg" alt="Arthur" class="avatar">
+                            <span class="nome-usuario">Sobre mim</span>
+                            <span class="tempo-story">8w</span>
+                        </div>
+                        <div class="acoes-story">
+                            <span class="material-icons botao-volume">volume_off</span>
+                            <span class="material-icons">more_vert</span>
+                        </div>
+                    </div>
+                    <video src="img.videos/codando.mp4" loop playsinline muted></video>
+                    <div class="rodape-story">
+                        <div class="campo-resposta"><span>Responda tutudev.js...</span></div>
+                        <span class="material-icons icone-coracao">favorite_border</span>
+                    </div>
                 </div>
-                <span class="material-icons heart-icon">favorite_border</span>
-            </div>
-        </div>
 
-        <div class="story-card">
-            <div class="story-header">
-                <div class="story-user-info">
-                    <img src="img.videos/foto.jpeg" alt="Arthur" class="story-avatar">
-                    <span class="story-username">Sobre mim</span>
-                    <span class="story-time">48w</span>
+                <div class="card-story">
+                    <div class="topo-story">
+                        <div class="info-usuario">
+                            <img src="img.videos/foto.jpeg" alt="Arthur" class="avatar">
+                            <span class="nome-usuario">Sobre mim</span>
+                            <span class="tempo-story">48w</span>
+                        </div>
+                        <div class="acoes-story">
+                            <span class="material-icons botao-volume">volume_off</span>
+                            <span class="material-icons">more_vert</span>
+                        </div>
+                    </div>
+                    <video src="img.videos/cavaquinho.mp4" loop playsinline muted></video>
+                    <div class="rodape-story">
+                        <div class="campo-resposta"><span>Responda tutudev.js...</span></div>
+                        <span class="material-icons icone-coracao">favorite_border</span>
+                    </div>
                 </div>
-                <div class="story-actions">
-                    <span class="material-icons volume-btn">volume_off</span>
-                    <span class="material-icons">more_vert</span>
-                </div>
-            </div>
 
-            <video src="img.videos/cavaquinho.mp4" loop playsinline muted></video>
-
-            <div class="story-footer">
-                <div class="story-input-capsule">
-                    <span>Responda tutudev.js...</span>
+                <div class="card-story">
+                    <div class="topo-story">
+                        <div class="info-usuario">
+                            <img src="img.videos/foto.jpeg" alt="Arthur" class="avatar">
+                            <span class="nome-usuario">Sobre mim</span>
+                            <span class="tempo-story">52w</span>
+                        </div>
+                        <div class="acoes-story">
+                            <span class="material-icons botao-volume">volume_off</span>
+                            <span class="material-icons">more_vert</span>
+                        </div>
+                    </div>
+                    <video src="img.videos/jogando.mp4" loop playsinline muted></video>
+                    <div class="rodape-story">
+                        <div class="campo-resposta"><span>Responda tutudev.js...</span></div>
+                        <span class="material-icons icone-coracao">favorite_border</span>
+                    </div>
                 </div>
-                <span class="material-icons heart-icon">favorite_border</span>
-            </div>
-        </div>
 
-        <div class="story-card">
-            <div class="story-header">
-                <div class="story-user-info">
-                    <img src="img.videos/foto.jpeg" alt="Arthur" class="story-avatar">
-                    <span class="story-username">Sobre mim</span>
-                    <span class="story-time">52w</span>
-                </div>
-                <div class="story-actions">
-                    <span class="material-icons volume-btn">volume_off</span>
-                    <span class="material-icons">more_vert</span>
-                </div>
-            </div>
-
-            <video src="img.videos/jogando.mp4" loop playsinline muted></video>
-
-            <div class="story-footer">
-                <div class="story-input-capsule">
-                    <span>Responda tutudev.js...</span>
-                </div>
-                <span class="material-icons heart-icon">favorite_border</span>
             </div>
         </div>
-        <script src="script.js"></script>
+    </section>
 
-    </div>
-</section>
+    <section id="inspiracao" class="secao-inspiracao">
+        <div class="container-secao">
+            <div class="topo-inspiracao">
+                <div class="bloco-texto-inspiracao">
+                    <h2 class="titulo-secao">Inspiração</h2>
+                    <p class="descricao-cr7">
+                        Cristiano Ronaldo é um Jogador de futebol, vencedor de 5 champions, focado e determinado em apenas uma coisa: <strong>Vencer.</strong>
+                    </p>
+                    <h3 class="titulo-porque">Por que o CR7?</h3>
+                </div>
+                <div class="foto-principal">
+                    <img src="img.videos/ronaldo.jpg" alt="Cristiano Ronaldo Comemorando">
+                </div>
+            </div>
+            <div class="grade-cards">
+                <div class="card-pilar">
+                    <img src="img.videos/foco.jpg" alt="Foco">
+                    <span class="legenda-card">FOCO</span>
+                </div>
+                <div class="card-pilar">
+                    <img src="img.videos/VENCER.png" alt="Vencer">
+                    <span class="legenda-card">VENCER</span>
+                </div>
+                <div class="card-pilar">
+                    <img src="img.videos/GOAT.jpg" alt="G.O.A.T">
+                    <span class="legenda-card">G.O.A.T</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="secao-galeria">
+        <h2 class="titulo-secao">Galeria</h2>
+        <div class="grade-galeria">
+            <div class="foto g1"><img src="img.videos/quinta.png" alt="Foto 1"></div>
+            <div class="foto g2"><img src="img.videos/terceira.png" alt="Foto 2"></div>
+            <div class="foto g3"><img src="img.videos/sétima.png" alt="Foto 3"></div>
+            <div class="foto g4"><img src="img.videos/image.png" alt="Foto 4"></div>
+            <div class="foto g5"><img src="img.videos/primeira.png" alt="Foto 5"></div>
+            <div class="foto g6"><img src="img.videos/friends.jpg" alt="Foto 6"></div>
+            <div class="foto g7"><img src="img.videos/sexta.png" alt="Foto 7"></div>
+            <div class="foto g8"><img src="img.videos/oitava.png" alt="Foto 8"></div>
+            <div class="foto g9"><img src="img.videos/quarta.png" alt="Foto 9"></div>
+            <div class="foto g10">
+                <video src="img.videos/dancando.mp4" controls loop playsinline></video>
+            </div>
+            <div class="foto g11">
+                <video src="img.videos/20170707_173043.mp4" controls loop playsinline></video>
+            </div>
+            <div class="foto g12"><img src="img.videos/nona.png" alt="Foto 10"></div>
+        </div>
+    </section>
+
+    <section id="contato" class="secao-contato">
+        <h2 class="titulo-secao">Contato</h2>
+        <p class="frase-contato">Gostou, curtiu? entra em contato então</p>
+        <div class="wrapper-contato">
+            <div class="botoes-contato">
+                <a href="https://github.com/ArthurdevjuniorIA" target="_blank" class="btn-contato">
+                    <img src="img.videos/github.png" alt="GitHub">
+                    <span>ArthurdevjuniorIA</span>
+                </a>
+                <a href="https://instagram.com/tutudev.js" target="_blank" class="btn-contato btn-insta">
+                    <img src="img.videos/Instagram_icon.png" alt="Instagram">
+                    <span>tutudev.js</span>
+                </a>
+            </div>
+            <div class="card-contato">
+                <img src="img.videos/card.jpg" alt="Player Card">
+            </div>
+        </div>
+    </section>
+
+    <section id="Tabela" class="secao-tabela">
+        <div class="caixa-tabela">
+            <header class="cabecalho-tabela">
+                <h1>SOBRE MIM: <span>ARTHUR KAUÃ</span></h1>
+                <p class="descricao-cabecalho">Estudante de Desenvolvimento de Software</p>
+            </header>
+            <table class="tabela-perfil">
+                <thead>
+                    <tr>
+                        <th class="coluna-area">Área</th>
+                        <th class="coluna-detalhe">Detalhes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="celula-titulo">Contato</td>
+                        <td>
+                            <div class="bloco-info">
+                                <p><strong>Nome:</strong> <span class="destaque">Arthur Kauã</span></p>
+                                <p><strong>GitHub:</strong> <span class="destaque">github.com/ArthurdevjuniorIA</span></p>
+                                <p><strong>Instagram:</strong> <span class="destaque">@tutudev.js</span></p>
+                                <p><strong>Localização:</strong> Brasil</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-titulo">Foco atual</td>
+                        <td>
+                            <p class="texto-forte"><span class="destaque">Desenvolvedor em formação — Back-end & Front-end</span></p>
+                            <p class="texto-fraco">Estudando desenvolvimento back-end com Java e Python, enquanto também aprendo front-end e redes de computadores. Focado em construir uma base sólida e completa.</p>
+                            <div class="barra-xp">
+                                <span class="texto-xp">Progresso semestral: <span class="destaque">185 / 300 XP</span></span>
+                                <div class="fundo-barra">
+                                    <div class="preenchimento-barra"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-titulo">O que estou aprendendo</td>
+                        <td>
+                            <p class="texto-forte">Áreas que estou estudando ativamente:</p>
+                            <ul class="lista-badges">
+                                <li class="badge"><span class="destaque">Java</span> — Back-end, orientação a objetos, APIs REST</li>
+                                <li class="badge"><span class="destaque">Python</span> — Back-end, automações, lógica</li>
+                                <li class="badge"><span class="destaque">HTML & CSS</span> — Estrutura, layout, responsividade</li>
+                                <li class="badge"><span class="destaque">JavaScript</span> — Interatividade no front-end</li>
+                                <li class="badge">Redes de Computadores — Protocolos, infraestrutura</li>
+                                <li class="badge">Git & GitHub — Versionamento de código</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-titulo">Como eu estudo</td>
+                        <td>
+                            <div class="bloco-pilar">
+                                <span class="titulo-pilar">• NA PRÁTICA:</span>
+                                <span class="desc-pilar">Aprendo construindo projetos reais, errando e corrigindo — acredito que código escrito é melhor que código lido.</span>
+                            </div>
+                            <div class="bloco-pilar">
+                                <span class="titulo-pilar">• COM CONSISTÊNCIA:</span>
+                                <span class="desc-pilar">Estudo todos os dias, mesmo que pouco — constância é o que separa quem aprende de quem desiste.</span>
+                            </div>
+                            <div class="bloco-pilar">
+                                <span class="titulo-pilar">• SEM PRESSA:</span>
+                                <span class="desc-pilar">Prefiro entender de verdade a avançar sem base. Cada tecnologia tem seu tempo.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-titulo">Projetos</td>
+                        <td>
+                            <div class="bloco-projeto">
+                                <p><strong>Portfólio pessoal:</strong> <span class="destaque">Este site</span> — construído do zero com HTML, CSS e JavaScript puro, com design baseado em Figma.</p>
+                            </div>
+                            <div class="bloco-projeto">
+                                <p><strong>Estudos back-end:</strong> <span class="destaque">Repositórios no GitHub</span> — exercícios e projetos práticos em Java e Python disponíveis em github.com/ArthurdevjuniorIA.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="celula-titulo">Próximos passos</td>
+                        <td>
+                            <p class="texto-fraco">Aprofundar em <span class="destaque">Java com Spring Boot</span>, explorar bancos de dados relacionais com <span class="destaque">SQL</span>, e conectar o back-end com interfaces front-end para criar aplicações completas.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <footer class="rodape-tabela">
+                <p>© 2026 Arthur Kauã — Em construção, todo dia.</p>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
