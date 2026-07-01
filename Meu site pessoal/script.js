@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const storyCards = document.querySelectorAll(".story-card");
+    const storyCards = document.querySelectorAll(".card-story");
 
     storyCards.forEach(card => {
         const video = card.querySelector("video");
 
         card.addEventListener("click", (e) => {
-            if (e.target.classList.contains('volume-btn')) {
+            if (e.target.classList.contains('botao-volume')) {
                 video.muted = !video.muted;
                 e.target.textContent = video.muted ? "volume_off" : "volume_up";
-                return; 
+                return;
             }
-            if (e.target.classList.contains('heart-icon') || e.target.closest('.story-input-capsule')) {
+            if (e.target.classList.contains('icone-coracao') || e.target.closest('.campo-resposta')) {
                 return;
             }
             if (video.paused) {
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 const secoes = document.querySelectorAll('.secao-sobre, .secao-inspiracao, .secao-galeria, .secao-contato, .secao-tabela');
 
 const observador = new IntersectionObserver((entradas) => {
