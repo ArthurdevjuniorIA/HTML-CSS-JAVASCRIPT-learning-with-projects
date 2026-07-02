@@ -239,6 +239,18 @@ body {
     background-color: #0d0d0d;
     padding: 6rem 8%;
     min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.secao-inspiracao .container-secao {
+    max-width: 1400px; 
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 .secao-inspiracao .titulo-secao {
@@ -249,10 +261,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     gap: 5%;
-    margin-bottom: 4rem;
+    margin-bottom: 0; 
 }
 
 .bloco-texto-inspiracao {
@@ -771,4 +783,81 @@ body {
 .secao-tabela.visivel {
     opacity: 1;
     transform: translateY(0);
+}
+.secao-musica {
+    background-color: #0d0d0d;
+    padding: 6rem 8%;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.secao-musica .container-secao {
+    max-width: 1400px;
+}
+
+.secao-musica .titulo-secao {
+    margin-bottom: 3rem;
+}
+
+.grade-musica {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.card-musica {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.card-musica img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    filter: brightness(0.92);
+}
+
+.card-musica:hover img {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+@media (max-width: 768px) {
+    .grade-musica {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.icone-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 12px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.card-musica:hover .icone-play {
+    opacity: 1;
+}
+
+.card-musica.tocando .icone-play {
+    opacity: 1;
 }

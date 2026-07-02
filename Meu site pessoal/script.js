@@ -33,3 +33,37 @@ const observador = new IntersectionObserver((entradas) => {
 }, { threshold: 0.1 });
 
 secoes.forEach(secao => observador.observe(secao));
+const cardsMusica = document.querySelectorAll('.card-musica');
+
+cardsMusica.forEach(card => {
+    const audio = card.querySelector('audio');
+    const icone = card.querySelector('.icone-play');
+
+    card.addEventListener('click', () => {
+        const estaTocando = !audio.paused;
+        cardsMusica.forEach(outroCard => {
+            const outroAudio = outroCard.querySelector('audio');
+            const outroIcone = outroCard.querySelector('.icone-play');
+            if (outroAudio !== audio) {
+                outroAudio.pause();
+                outroAudio.currentTime = 0;
+                outroCard.classList.remove('tocando');
+                outroIcone.textContent = 'play_arrow';
+            }
+        });
+
+        if (estaTocando) {
+            audio.pause();
+            card.classList.remove('tocando');
+            icone.textContent = 'play_arrow';
+        } else {
+            audio.play();
+            card.classList.add('tocando');
+            icone.textContent = 'pause';
+        }
+    });
+    audio.addEventListener('ended', () => {
+        card.classList.remove('tocando');
+        icone.textContent = 'play_arrow';
+    });
+});
