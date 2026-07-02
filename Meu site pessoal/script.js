@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const storyCards = document.querySelectorAll(".card-story");
 
-    storyCards.forEach(card => {
+    // Stories da seção "Sobre mim"
+    document.querySelectorAll(".card-story").forEach(card => {
         const video = card.querySelector("video");
 
         card.addEventListener("click", (e) => {
@@ -13,57 +13,57 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.target.classList.contains('icone-coracao') || e.target.closest('.campo-resposta')) {
                 return;
             }
-            if (video.paused) {
-                video.play().catch(err => console.log("Erro ao reproduzir:", err));
-            } else {
-                video.pause();
-            }
+            video.paused ? video.play().catch(() => {}) : video.pause();
         });
     });
-});
 
-const secoes = document.querySelectorAll('.secao-sobre, .secao-inspiracao, .secao-galeria, .secao-contato, .secao-tabela');
+    // Cards de música
+    const cardsMusica = document.querySelectorAll('.card-musica');
 
-const observador = new IntersectionObserver((entradas) => {
-    entradas.forEach(entrada => {
-        if (entrada.isIntersecting) {
-            entrada.target.classList.add('visivel');
-        }
-    });
-}, { threshold: 0.1 });
+    cardsMusica.forEach(card => {
+        const audio = card.querySelector('audio');
+        const icone = card.querySelector('.icone-play');
 
-secoes.forEach(secao => observador.observe(secao));
-const cardsMusica = document.querySelectorAll('.card-musica');
+        card.addEventListener('click', () => {
+            const estaTocando = !audio.paused;
 
-cardsMusica.forEach(card => {
-    const audio = card.querySelector('audio');
-    const icone = card.querySelector('.icone-play');
-
-    card.addEventListener('click', () => {
-        const estaTocando = !audio.paused;
-        cardsMusica.forEach(outroCard => {
-            const outroAudio = outroCard.querySelector('audio');
-            const outroIcone = outroCard.querySelector('.icone-play');
-            if (outroAudio !== audio) {
+            cardsMusica.forEach(outroCard => {
+                if (outroCard === card) return;
+                const outroAudio = outroCard.querySelector('audio');
                 outroAudio.pause();
                 outroAudio.currentTime = 0;
                 outroCard.classList.remove('tocando');
-                outroIcone.textContent = 'play_arrow';
+                outroCard.querySelector('.icone-play').textContent = 'play_arrow';
+            });
+
+            if (estaTocando) {
+                audio.pause();
+                card.classList.remove('tocando');
+                icone.textContent = 'play_arrow';
+            } else {
+                audio.play();
+                card.classList.add('tocando');
+                icone.textContent = 'pause';
             }
         });
 
-        if (estaTocando) {
-            audio.pause();
+        audio.addEventListener('ended', () => {
             card.classList.remove('tocando');
             icone.textContent = 'play_arrow';
-        } else {
-            audio.play();
-            card.classList.add('tocando');
-            icone.textContent = 'pause';
-        }
+        });
     });
-    audio.addEventListener('ended', () => {
-        card.classList.remove('tocando');
-        icone.textContent = 'play_arrow';
-    });
+
+    // Animação de entrada ao rolar a página
+    const secoes = document.querySelectorAll(
+        '.secao-sobre, .secao-inspiracao, .secao-galeria, .secao-musica, .secao-contato, .secao-tabela, .secao-sugestao'
+    );
+
+    const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach(entrada => {
+            if (entrada.isIntersecting) entrada.target.classList.add('visivel');
+        });
+    }, { threshold: 0.1 });
+
+    secoes.forEach(secao => observador.observe(secao));
+
 });
