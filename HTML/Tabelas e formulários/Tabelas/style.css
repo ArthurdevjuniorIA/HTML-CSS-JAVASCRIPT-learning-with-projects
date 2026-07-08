@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat',sans-serif;
+    background-color: #121212;
+    color: white;
+}
+.titulo {
+    text-align: center;
+    font-weight: 800;
+}
+.titulo, .titulo_pergunta_1{
+    color: #FFD700;
+}
+.titulo_pergunta_1 {
+    font-weight: 700;
+}
+.section_1 {
+    padding: 40px
+}
+table, th, td {
+    border: 1px solid red;
+}
