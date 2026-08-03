@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório: Compilação dos Conteúdos Abordados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Oswald:wght@500;700&family=Montserrat:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #2c2d30;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* CONTAINER FIXO DO SLIDE (1280x720) */
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #f1f3f5; 
+            background-image: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(220,225,230,0.8) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* FOLHA DE PAPEL DO DOSSIÊ (Fundo Quadriculado sutil) */
+        .paper-sheet {
+            width: 1220px;
+            height: 660px;
+            background-color: #FAF6F0; /* Creme/Off-white original da imagem */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            position: relative;
+            padding: 50px 60px 30px 60px;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                linear-gradient(rgba(15, 44, 89, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15, 44, 89, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* CLIPE METÁLICO SUPERIOR (Fiel à imagem image_556c92.png) */
+        .clipboard-clip {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 30px;
+            background: linear-gradient(to bottom, #5a5d64, #33363b);
+            border-radius: 4px;
+            border: 1px solid #1a1b1d;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+        
+        .clipboard-clip::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 8px;
+            background: #1c1d1f;
+            border-radius: 4px;
+        }
+
+        /* BADGE TOP-RIGHT TEXTURIZADO */
+        .brush-badge {
+            position: absolute;
+            top: 25px;
+            right: 45px;
+            width: 100px;
+            height: 80px;
+            background-color: #2e519e; /* Azul texturizado original */
+            clip-path: polygon(10% 0%, 100% 5%, 95% 85%, 5% 95%, 0% 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
+            transform: rotate(2deg);
+        }
+
+        .badge-circle {
+            width: 44px;
+            height: 44px;
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .badge-number {
+            font-family: 'Share Tech Mono', monospace;
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        /* MARCA D'ÁGUA ONDULADA (Bottom Right) */
+        .waves-watermark {
+            position: absolute;
+            bottom: 25px;
+            right: 40px;
+            width: 320px;
+            height: 120px;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* CABEÇALHO DO SLIDE */
+        .slide-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 38px;
+            font-weight: 800;
+            color: #0F2C59; /* Azul marinho escuro */
+            letter-spacing: -0.5px;
+            margin-bottom: 25px;
+        }
+
+        /* PAINÉIS ESCUROS ESTILO TÁTICO */
+        .tactical-box {
+            background-color: #111215; /* Cinza-escuro quase preto da imagem */
+            border-radius: 6px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 3px solid #2a2c31;
+            transition: all 0.3s ease;
+        }
+
+        .tactical-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+
+        .box-header {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #F5A623; /* Laranja/Dourado tático */
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .box-content {
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: #e2e8f0;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container" id="slide_compilacao">
+        
+        <!-- Prancheta Folha de Papel -->
+        <div class="paper-sheet">
+            
+            <!-- Clipe metálico tático no topo -->
+            <div class="clipboard-clip"></div>
+
+            <!-- Badge azul com o número 17 no canto direito -->
+            <div class="brush-badge">
+                <div class="badge-circle">
+                    <span class="badge-number">17</span>
+                </div>
+            </div>
+
+            <!-- Titulação Oficial -->
+            <h1 class="slide-title">Relatório : Compilação dos conteúdos abordados</h1>
+
+            <div class="grid grid-cols-12 gap-6 flex-grow z-10 items-stretch">
+                
+                <!-- COLUNA ESQUERDA: EUA e Paraguai (Originalmente na Esquerda) -->
+                <div class="col-span-6 flex flex-col justify-between gap-4">
+                    
+                    <!-- Bloco Estados Unidos (Idêntico ao original da imagem_556c92.png) -->
+                    <div class="tactical-box flex-1 flex flex-col justify-center">
+                        <div class="box-header">
+                            <i class="fa-solid fa-plane-departure"></i> Estados Unidos (Economia e Copa):
+                        </div>
+                        <p class="box-content">
+                            Os EUA têm um PIB gigante de 28,7 bilhões impulsionado por tecnologia (Vale do Silício), finanças (Wall Street) e energia (Texas). Para a Copa de 2026, o país projeta lucrar bilhões com turismo e hotelaria sem precisar gastar com novos estádios, já que usará sua infraestrutura moderna de ponta.
+                        </p>
+                    </div>
+
+                    <!-- Bloco Paraguai (Idêntico ao original da imagem_556c92.png) -->
+                    <div class="tactical-box flex-1 flex flex-col justify-center">
+                        <div class="box-header">
+                            <i class="fa-solid fa-hourglass-half"></i> Paraguai (Economia e Cultura):
+                        </div>
+                        <p class="box-content">
+                            Em contraste, o Paraguai se destaca pelo agronegócio (soja/carne) e energia limpa (Itaipu). Sua cultura é rica em tradições indígenas guaranis, com culinária típica à base de milho e mandioca, além de festas religiosas marcantes, diferindo dos costumes globais norte-americanos (como <em>Thanksgiving</em> e <em>Halloween</em>).
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- COLUNA DIREITA: Canadá, México e Fusos Horários (Substituindo a caixa preta) -->
+                <div class="col-span-6 flex flex-col justify-between">
+                    
+                    <div class="tactical-box h-full flex flex-col justify-between border-l-4 border-amber-500">
+                        <div>
+                            <div class="box-header text-amber-500">
+                                <i class="fa-solid fa-globe"></i> Canadá e México (Economia e Integração):
+                            </div>
+                            <p class="box-content mb-4">
+                                Para fechar a tríade da Copa de 2026, o <strong>Canadá (PIB US$ 2,2T)</strong> apoia-se em tecnologia e recursos naturais, enquanto o <strong>México (PIB US$ 1,4T)</strong> brilha na manufatura industrial e turismo. A integração desses territórios expande as rotas de viagem escolares e jornalísticas.
+                            </p>
+
+                            <div class="box-header text-amber-500 mt-2">
+                                <i class="fa-solid fa-clock"></i> O Desafio dos Fusos Integrados:
+                            </div>
+                            <p class="box-content">
+                                Lidar com fusos horários que variam de **UTC-8** (Vancouver) até **UTC-3** (Brasília/Assunção) exige precisão matemática. A análise dessas rotas mostra o impacto biológico nos atletas (jet lag) e força os correspondentes a planejar transmissões ao vivo de forma estratégica para mitigar o descompasso social e digestivo.
+                            </p>
+                        </div>
+
+                        <!-- Mini Infográfico Conexão de Horários -->
+                        <div class="mt-4 bg-zinc-900/80 p-3 rounded border border-zinc-800 flex justify-between items-center text-[11px] font-mono">
+                            <div class="text-center">
+                                <span class="text-slate-400 block">Vancouver</span>
+                                <span class="text-amber-500 font-bold">10:00 (UTC-8)</span>
+                            </div>
+                            <div class="text-slate-600"><i class="fa-solid fa-arrow-right-long"></i></div>
+                            <div class="text-center">
+                                <span class="text-slate-400 block">Cidade do México</span>
+                                <span class="text-amber-500 font-bold">12:00 (UTC-6)</span>
+                            </div>
+                            <div class="text-slate-600"><i class="fa-solid fa-arrow-right-long"></i></div>
+                            <div class="text-center">
+                                <span class="text-slate-400 block">Brasília</span>
+                                <span class="text-emerald-500 font-bold">15:00 (UTC-3)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Linhas de Onda de Relevo Estilo Marca d'Água (Canto Inferior Direito) -->
+            <svg class="waves-watermark" viewBox="0 0 100 30" preserveAspectRatio="none">
+                <path d="M 0 15 Q 25 10 50 15 T 100 15" fill="none" stroke="#0f2c59" stroke-width="0.25"></path>
+                <path d="M 0 20 Q 25 15 50 20 T 100 20" fill="none" stroke="#0f2c59" stroke-width="0.25"></path>
+                <path d="M 0 25 Q 25 20 50 25 T 100 25" fill="none" stroke="#0f2c59" stroke-width="0.25"></path>
+            </svg>
+
+            <!-- Rodapé da Folha do Dossiê -->
+            <div class="flex justify-between items-center border-t border-[#e3dcd3] pt-3 mt-4 z-10 text-[11px] text-[#7c7667] italic">
+                <span>*Dossiê Pedagógico - Atividade integrada de Geografia e Matemática Aplicada</span>
+                <span class="font-bold text-[#0F2C59] tracking-wider font-family: 'Barlow Condensed' not-italic">CORRESPONDENTES DA COPA 2026</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
