@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    background-image: url(../assets/img/imagem-de-fundo.jpeg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+#subtitulo {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: oblique;
+}
+#titulo {
+    text-align: center;
+}
