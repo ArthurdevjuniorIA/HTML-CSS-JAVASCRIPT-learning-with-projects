@@ -32,3 +32,6 @@ O projeto está organizado nas seguintes pastas:
 1. **Clonar o repositório:**
    ```bash
    git clone [https://github.com/ArthurdevjuniorIA/HTML-CSS-JAVASCRIPT-learning-with-projects.git](https://github.com/ArthurdevjuniorIA/HTML-CSS-JAVASCRIPT-learning-with-projects.git)
+2. **Entrar na pasta**
+3. '''bash
+4. cd HTML/CSS/JS
