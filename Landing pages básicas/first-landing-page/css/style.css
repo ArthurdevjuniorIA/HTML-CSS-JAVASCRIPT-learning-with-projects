@@ -5,14 +5,16 @@
 }
 body{
     color: white;
-    background-image: url(../assets/img/imagem-de-fundo.jpeg);
-    height: 100%;
+}
+img {
     width: 100%;
-    background-repeat: no-repeat;
+    opacity: 0.6;
+    height: 100%;
 }
 #subtitulo {
     color: rgba(255, 255, 255, 0.8);
     font-style: oblique;
+    text-shadow: 1px 1px;
 }
 #titulo {
     text-align: center;
