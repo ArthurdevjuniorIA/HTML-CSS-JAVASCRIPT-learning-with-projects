@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Unbounded'; /* Nome que você vai usar para aplicar a fonte */
+    src: url('../assets/fonts/Unbounded-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Exemplo de aplicação no projeto */
+body {
+    font-family: 'Unbounded', sans-serif;
+    background-color: #0E1014;
+    color: white;
+}
+
+#titulo1 {
+    color: #9747FF;
+}
