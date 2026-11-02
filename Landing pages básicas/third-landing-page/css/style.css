@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
-table, th, td, thead,tbody {
-    border: 1px solid beige;
-    border-collapse: collapse;
-}
+
 body {
     background-color: #121212;
     color: white;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 3px solid beige;
+}
+
+td, th {
+    width: 240px;
+    height: 70px;
+    text-align: center; /* Opcional: centraliza o texto nas células */
+}
+th {
+    font-size: 20px;
 }
